@@ -202,7 +202,7 @@ def updateCallback(client, callback_query,redis):
     if date[0] == "dlf":
       File = date[1]
       os.system("rm ./files/"+File)
-      url = "https://raw.githubusercontent.com/NewBotMD/NB-files/master/"+File
+      url = "https://raw.githubusercontent.com/NitroMD/NB-files/master/"+File
       out = requests.get(url).text
       f = open("./files/"+File,"w+")
       f.write(out)
@@ -297,7 +297,7 @@ def updateCallback(client, callback_query,redis):
       edits = (redis.hget("{}Nbot:{}:edits".format(BOT_ID,chatID),userID) or 0)
       rate = int(msgs)*100/20000
       age = getAge(userID,r)
-      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(Name(userFN),url="t.me/nbbot")],[InlineKeyboardButton(r.Rrank.format(t),url="t.me/nbbot")],[InlineKeyboardButton(r.Rmsgs.format(msgs),url="t.me/nbbot")],[InlineKeyboardButton(r.Rrate.format(str(rate)+"%"),url="t.me/nbbot")],[InlineKeyboardButton(r.Redits.format(edits),url="t.me/nbbot")],[InlineKeyboardButton(r.Rage.format(age),url="t.me/nbbot")]])
+      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(Name(userFN),url="t.me/vvhvvv")],[InlineKeyboardButton(r.Rrank.format(t),url="t.me/vvhvvv")],[InlineKeyboardButton(r.Rmsgs.format(msgs),url="t.me/vvhvvv")],[InlineKeyboardButton(r.Rrate.format(str(rate)+"%"),url="t.me/vvhvvv")],[InlineKeyboardButton(r.Redits.format(edits),url="t.me/vvhvvv")],[InlineKeyboardButton(r.Rage.format(age),url="t.me/vvhvvv")]])
       Bot("editMessageReplyMarkup",{"chat_id":chatID,"message_id":message_id,"disable_web_page_preview":True,"reply_markup":reply_markup})
     if re.search("ShowO",date[0]):
       T = date[0].replace("ShowO","")
